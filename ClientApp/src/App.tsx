@@ -4,6 +4,10 @@ import './App.css';
 import HelloWorld from './Components/HelloWorld';
 import HelloUser from './Components/HelloUser';
 import Ship from './Components/Ship';
+import FavouriteColor from './Components/FavouriteColor';
+import Container from './Components/UnmountedComponent';
+import MyForm from './Components/FormExample';
+import MultipleInputForm from './Components/MultipleInputForm';
 
 const App: React.FC = () => {
 	return (
@@ -27,6 +31,10 @@ const App: React.FC = () => {
 				<HelloWorld />
 				<HelloUser name="Kaelan" />
 				<Ship value="abc" />
+				<FavouriteColor />
+				<Container />
+				<MyForm />
+				<MultipleInputForm />
 			</div>
 		</>
 	);
