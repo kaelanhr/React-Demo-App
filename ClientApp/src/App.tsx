@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import HelloWorld from './Components/HelloWorld';
+import HelloUser from './Components/HelloUser';
+import Ship from './Components/Ship';
 
 const App: React.FC = () => {
 	return (
@@ -23,6 +25,8 @@ const App: React.FC = () => {
 				</a>
 				</header>
 				<HelloWorld />
+				<HelloUser name="Kaelan" />
+				<Ship value="abc" />
 			</div>
 		</>
 	);
