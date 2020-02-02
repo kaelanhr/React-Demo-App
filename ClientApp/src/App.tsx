@@ -9,6 +9,7 @@ import Container from './Components/W3-Components/UnmountedComponent';
 import MyForm from './Components/W3-Components/FormExample';
 import MultipleInputForm from './Components/W3-Components/MultipleInputForm';
 import Game from './Components/TicTacTutorial/Game';
+import Counter from './Components/ReactJS-Components/Counter';
 
 const App: React.FC = () => {
 	return (
@@ -37,6 +38,7 @@ const App: React.FC = () => {
 				<MyForm />
 				<MultipleInputForm />
 				<Game />
+				<Counter />
 			</div>
 		</>
 	);
