@@ -10,6 +10,7 @@ import MyForm from './Components/W3-Components/FormExample';
 import MultipleInputForm from './Components/W3-Components/MultipleInputForm';
 import Game from './Components/TicTacTutorial/Game';
 import Counter from './Components/ReactJS-Components/Counter';
+import Todo from './Components/ReactJS-Components/Todo';
 
 const App: React.FC = () => {
 	return (
@@ -39,6 +40,7 @@ const App: React.FC = () => {
 				<MultipleInputForm />
 				<Game />
 				<Counter />
+				<Todo />
 			</div>
 		</>
 	);
