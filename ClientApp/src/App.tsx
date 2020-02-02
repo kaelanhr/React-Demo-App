@@ -8,6 +8,7 @@ import FavouriteColor from './Components/FavouriteColor';
 import Container from './Components/UnmountedComponent';
 import MyForm from './Components/FormExample';
 import MultipleInputForm from './Components/MultipleInputForm';
+import Game from './Components/TicTacTutorial/Game';
 
 const App: React.FC = () => {
 	return (
@@ -35,6 +36,7 @@ const App: React.FC = () => {
 				<Container />
 				<MyForm />
 				<MultipleInputForm />
+				<Game />
 			</div>
 		</>
 	);
