@@ -11,6 +11,7 @@ import MultipleInputForm from './Components/W3-Components/MultipleInputForm';
 import Game from './Components/TicTacTutorial/Game';
 import Counter from './Components/ReactJS-Components/Counter';
 import Todo from './Components/ReactJS-Components/Todo';
+import MarkdownEditor from './Components/ReactJS-Components/MarkdownEditor';
 
 const App: React.FC = () => {
 	return (
@@ -41,6 +42,7 @@ const App: React.FC = () => {
 				<Game />
 				<Counter />
 				<Todo />
+				<MarkdownEditor />
 			</div>
 		</>
 	);
