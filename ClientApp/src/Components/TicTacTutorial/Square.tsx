@@ -1,15 +1,23 @@
 import React, { Component } from 'react'
 
-interface IProps {
+interface IState {
 	value: any
 }
 
-export default class Square extends Component<IProps> {
+interface IProps {
+	onClick: Function
+	value: any
+}
+
+export default class Square extends Component<IProps, IState> {
 	render() {
 		return (
-			<button className="square">
+			<button
+				className="square"
+				onClick={() => this.props.onClick()}
+			>
 				{this.props.value}
-			</button>
+			</ button >
 		)
 	}
 }
