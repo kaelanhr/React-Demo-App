@@ -31,25 +31,28 @@ export default class MobxCounter extends Component<{}> {
 	reverseState = (): void => {
 		this.timer.isActive = !this.timer.isActive;
 	}
+	reset = (): void => {
+		var r = window.confirm("Are you sure you wish to reset this timer?");
+		if (r == true) {
+			this.timer.isActive = false;
+			this.timer.seconds = 0;
+			this.timer.hours = 0;
+			this.timer.minutes = 0;
+		}
+	}
 
 	tick() {
 		if (!this.timer.isActive) { return; }
 		this.timer.seconds++;
-		if (this.timer.minutes > 1 && this.timer.minutes % 60 == 0) {
-			this.timer.hours++;
-			this.timer.minutes = 0;
-		}
 		if (this.timer.seconds > 1 && this.timer.seconds % 60 == 0) {
 			this.timer.minutes++;
 			this.timer.seconds = 0;
 		}
+		if (this.timer.minutes > 1 && this.timer.minutes % 60 == 0) {
+			this.timer.hours++;
+			this.timer.minutes = 0;
+		}
 	}
-
-	// @computed
-	// get validationMessage() {
-	// 	if (!this.pwsEqual) {
-	// 		return "Passwords are not equal"
-	// 	}
 
 	componentDidMount() {
 		this.interval = setInterval(() => this.tick(), 1000);
@@ -68,6 +71,7 @@ export default class MobxCounter extends Component<{}> {
 				<p>{this.timer.minutes} Minutes</p>
 				<p>{this.timer.seconds} Seconds</p>
 				<button onClick={this.reverseState}>{this.timer.isActive ? 'Pause' : 'Start'}</button>
+				<button onClick={this.reset}>Reset</button>
 			</div>
 		)
 	}
