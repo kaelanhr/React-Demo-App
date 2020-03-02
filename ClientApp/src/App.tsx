@@ -19,6 +19,8 @@ import {
 	Link
 } from "react-router-dom";
 import SimpleNavigationItem from './Components/SimpleNavigationItem';
+import { MobXGlobals } from 'mobx/lib/internal';
+import MobxCounter from './Components/ReactJS-Components/MobxCounter';
 
 const App: React.FC = () => {
 	return (
@@ -56,6 +58,7 @@ const App: React.FC = () => {
 					</Route>
 					<Route exact path="/counter">
 						<Counter />
+						<MobxCounter />
 					</Route>
 					<Route exact path="/forms">
 						<MyForm />
