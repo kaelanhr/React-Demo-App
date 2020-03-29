@@ -1,25 +1,31 @@
 import React, { Component } from 'react'
-import { ComponentOne, ComponentTwo, ComponentThree, ComponentFour } from './TestTabComponents';
 import { observer } from 'mobx-react';
 import { observable, action } from 'mobx';
+import { ComponentOne } from './TestTabComponents';
 
+
+interface TabSetProps {
+	children?: React.ReactElement<TabProps>[]
+}
 @observer
-export default class TabSet extends Component<TabSetProps> {
+export class TabSet extends Component<TabSetProps> {
 
 	@action
 	switchTab(tabName: string) {
-		this.tabs = this.props.value
-			.filter(x => x.name == tabName)
-			.map(x => <Tab {...x} />)
+		this.tabs = this.props.children ? this.props.children
+			?.filter(x => x.props.name == tabName)[0] : null
 	}
 
 	@observable
-	tabs = this.props.value
-		.filter(x => x.isDefault)
-		.map(x => <Tab {...x} />)
+	activeTab = this.props.children ? this.props.children[0].props.name : ''
+
+	@observable
+	tabs = this.props.children ? this.props.children.filter(child => child.props.name == this.activeTab)[0] : null
 
 	render() {
-		const tabTitles = this.props.value.map(x => <button id={this.toStandardAttrFormat(x.name)} onClick={() => this.switchTab(x.name)}>{x.name}</button>)
+		const tabTitles = this.props.children ? this.props.children?.map(child => {
+			return <button onClick={() => this.switchTab(child.props.name)}>{child.props.name}</button>;
+		}) : null;
 		return (
 			<div className="tab-set">
 				{tabTitles}
@@ -33,22 +39,16 @@ export default class TabSet extends Component<TabSetProps> {
 	}
 }
 
-interface TabSetProps {
-	value: TabProps[]
-}
-
-export interface TabProps {
+interface TabProps {
 	name: string,
-	childComponent: React.ReactNode
-	isDefault: boolean
 }
 
-class Tab extends Component<TabProps> {
+export class Tab extends Component<TabProps> {
 	render() {
 		return (
-			<div className={this.props.name}>
-				{this.props.childComponent}
-			</div>
+			<>
+				{this.props.children}
+			</>
 		);
 	}
 }

@@ -24,8 +24,8 @@ import SimpleNavigationItem from './Components/SimpleNavigationItem';
 import { MobXGlobals } from 'mobx/lib/internal';
 import MobxCounter from './Components/ReactJS-Components/MobxCounter';
 import { ComponentThree, ComponentTwo, ComponentOne, ComponentFour } from './Components/MyComponents/Tabs/TestTabComponents';
-import { TestTabSet } from './Components/MyComponents/Tabs/TestTabSet';
 import { IncrementingTabs } from './Components/MyComponents/Tabs/IncrementingTabs';
+import { Tab, TabSet } from './Components/MyComponents/Tabs/TabSet';
 
 export default class App extends Component {
 	constructor(props: any) {
@@ -79,7 +79,21 @@ export default class App extends Component {
 								<ComponentFour />
 							</IncrementingTabs>
 
-							<TestTabSet />
+							<h2>Clickable tab sets</h2>
+							<TabSet>
+								<Tab name={'Component One'}>
+									<ComponentOne />
+								</Tab>
+								<Tab name={'Component Two'} >
+									<ComponentTwo />
+								</Tab>
+								<Tab name={'Component Three'} >
+									<ComponentThree />
+								</Tab>
+								<Tab name={'Component Four'} >
+									<ComponentFour />
+								</Tab>
+							</TabSet>
 						</Route>
 						<Route exact path="/forms">
 							<MyForm />
