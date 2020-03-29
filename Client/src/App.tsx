@@ -23,6 +23,7 @@ import {
 import SimpleNavigationItem from './Components/SimpleNavigationItem';
 import { MobXGlobals } from 'mobx/lib/internal';
 import MobxCounter from './Components/ReactJS-Components/MobxCounter';
+import { ComponentThree, ComponentTwo, ComponentOne, IncrementingTabs, ComponentFour } from './Components/MyComponents/Tabs/IncrementingTabs';
 
 export default class App extends Component {
 	constructor(props: any) {
@@ -41,6 +42,7 @@ export default class App extends Component {
 						<SimpleNavigationItem linkUrl="hello-world" />
 						<SimpleNavigationItem linkUrl="markdown-editor" />
 						<SimpleNavigationItem linkUrl="todo-list" />
+						<SimpleNavigationItem linkUrl="tabs" />
 						<SimpleNavigationItem linkUrl="container" />
 					</ul>
 					<Switch>
@@ -66,6 +68,14 @@ export default class App extends Component {
 						<Route exact path="/counter">
 							<Counter />
 							<MobxCounter />
+						</Route>
+						<Route exact path="/tabs">
+							<IncrementingTabs>
+								<ComponentOne />
+								<ComponentTwo />
+								<ComponentThree />
+								<ComponentFour />
+							</IncrementingTabs>
 						</Route>
 						<Route exact path="/forms">
 							<MyForm />
