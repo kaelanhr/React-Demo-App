@@ -23,7 +23,9 @@ import {
 import SimpleNavigationItem from './Components/SimpleNavigationItem';
 import { MobXGlobals } from 'mobx/lib/internal';
 import MobxCounter from './Components/ReactJS-Components/MobxCounter';
-import { ComponentThree, ComponentTwo, ComponentOne, IncrementingTabs, ComponentFour } from './Components/MyComponents/Tabs/IncrementingTabs';
+import { ComponentThree, ComponentTwo, ComponentOne, ComponentFour } from './Components/MyComponents/Tabs/TestTabComponents';
+import { TestTabSet } from './Components/MyComponents/Tabs/TestTabSet';
+import { IncrementingTabs } from './Components/MyComponents/Tabs/IncrementingTabs';
 
 export default class App extends Component {
 	constructor(props: any) {
@@ -76,6 +78,8 @@ export default class App extends Component {
 								<ComponentThree />
 								<ComponentFour />
 							</IncrementingTabs>
+
+							<TestTabSet />
 						</Route>
 						<Route exact path="/forms">
 							<MyForm />
